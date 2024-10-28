@@ -6,19 +6,19 @@ const question = document.getElementsByClassName ('question');
 
 const image = document.getElementsByClassName ('img');
 
-const reponses = document.getElementsByClassName ('options');
+const responses = document.getElementsByClassName ('options');
 
 const button = document.getElementById ('next-button');
 
 
-const myFirstQuestion = quiz_whoPaintThat.questions[1]
+const myFirstQuestion = quiz_whoPaintThat.questions[0]
 
 question.innerText = myFirstQuestion ;
 
 
 myFirstQuestion.options.forEach(options => {
     const optionsButton = document.createElement('button');
-    optionsButton.innerText = quiz_whoPaintThat.options;
-    __________.classList.add('__________');
-    __________.appendChild(__________);
+    optionsButton.innerText = options;
+    optionsButton.classList.add('options');
+    responses[0].appendChild(optionsButton);
   });

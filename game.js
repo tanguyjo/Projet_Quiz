@@ -25,6 +25,7 @@ const button = document.getElementById ('nextButton');
 //   });
 
 let currentQuestionIndex = 0
+let correctAnswer = quiz_whoPaintThat.questions[0].correct_answer
 //const optionsButton = document.createElement('button');
 //const UserResponse = optionsButton.addEventListener('click') 
   
@@ -42,6 +43,7 @@ function loadQuestion(){
     optionsButton.classList.add('options-container');
     responses.appendChild(optionsButton); 
     
+    
     checkAnswer(optionsButton)
   });
  
@@ -51,17 +53,22 @@ function loadQuestion(){
 nextButton.addEventListener('click', ()=> {
 
   currentQuestionIndex ++ ;
-
+ 
 if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {
+  correctAnswer =  quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer
   loadQuestion();
 } else {
   responses.innerHTML =" ";
+  correctAnswer = " "
+  
   // imageQuestion.innerText ="  ";
   // .button.style.display ="none";
   titleQuestion.innerText = "Fin du Quiz";  
   nextButton.style.display= 'none';
   imageQuestion.setAttribute("src", " ")
   replayButton.style.display= 'inline-block';
+  currentQuestionIndex = 0
+  correctAnswer =  quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer
 }
 
 });
@@ -70,21 +77,23 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {
 const replayButton = document.getElementById ('replayButton');
 
 replayButton.addEventListener('click', () => {
-  currentQuestionIndex = 0
   replayButton.style.display= 'none';
   nextButton.style.display= 'inline-block';
  loadQuestion()
 });
 
-const correctAnswer =  quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer
+
 
 
 function checkAnswer(optionsButton){
+
   optionsButton.addEventListener("click", ()=> {
     console.log(optionsButton.innerText)
     console.log(correctAnswer)
      if (optionsButton.innerText == correctAnswer) {
       console.log(true)}
+      
+      
     else {
     //console.log(true) ;
      console.log(false )

@@ -25,8 +25,12 @@ const button = document.getElementById ('nextButton');
 //   });
 
 let currentQuestionIndex = 0
+//const optionsButton = document.createElement('button');
+//const UserResponse = optionsButton.addEventListener('click') 
+  
 
 function loadQuestion(){
+  
   responses.innerHTML =" ";
   const myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex];
   titleQuestion.innerText = myFirstQuestion.text;
@@ -36,8 +40,11 @@ function loadQuestion(){
     const optionsButton = document.createElement('button');
     optionsButton.innerText = options;
     optionsButton.classList.add('options-container');
-    responses.appendChild(optionsButton);
+    responses.appendChild(optionsButton); 
+    
+    checkAnswer(optionsButton)
   });
+ 
 }
 
 
@@ -68,3 +75,21 @@ replayButton.addEventListener('click', () => {
   nextButton.style.display= 'inline-block';
  loadQuestion()
 });
+
+const correctAnswer =  quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer
+
+
+function checkAnswer(optionsButton){
+  optionsButton.addEventListener("click", ()=> {
+    console.log(optionsButton.innerText)
+    console.log(correctAnswer)
+     if (optionsButton.innerText == correctAnswer) {
+      console.log(true)}
+    else {
+    //console.log(true) ;
+     console.log(false )
+    //console.log(false); 
+ } })}
+ 
+//  console.log(correctAnswer)
+//  console.log(optionsButton.innerText)

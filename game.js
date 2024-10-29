@@ -11,19 +11,20 @@ const responses = document.getElementById ('options-container');
 const button = document.getElementById ('next-button');
 
 
-const myFirstQuestion = quiz_whoPaintThat.questions[1]
+const myFirstQuestion = quiz_whoPaintThat.questions[0]
 
 titleQuestion.innerText = myFirstQuestion.text ;
 
-console.log(titleQuestion)
-console.log(myFirstQuestion)
+imageQuestion.innerHTML = myFirstQuestion.image ;
 
- myFirstQuestion.img.forEach(img => {
-    const optionsButton = document.createElement('button');
-    optionsButton.innerText = options;
-    optionsButton.classList.add('options');
-    responses[0].appendChild(optionsButton);
-  });
+
+
+ /* myFirstQuestion.image.forEach(image => {
+    const paintingImage = document.createElement('img');
+    paintingImage.innerText = options;
+    paintingImage.classList.add('img');
+    imageQuestion.appendChild(paintingImageaintingImage);
+  }); */
 
 
 myFirstQuestion.options.forEach(options => {

@@ -2,13 +2,14 @@ export const quiz_whoPaintThat = {
     questions: [
       {
         text: "Quelle ville est représentée sur le tableau “La nuit étoilée” de Vincent van Gogh ?",
+        image: image.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/2560px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg',
         options: [
           "Paris",
           "Saint-Tropez",
           "Carcassonne",
           "Saint-Rémy-de-Provence"
         ],
-        correct_answer: "Saint-Rémy-de-Provence" // https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/2560px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg
+        correct_answer: "Saint-Rémy-de-Provence" 
       },
       {
         text: "Comment s’appelle cette toile de Frida Kahlo ?",

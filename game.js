@@ -53,10 +53,18 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {
   // .button.style.display ="none";
   titleQuestion.innerText = "Fin du Quiz";  
   nextButton.style.display= 'none';
-  imageQuestion.setAttribute("src", " ") 
+  imageQuestion.setAttribute("src", " ")
+  replayButton.style.display= 'inline-block';
 }
 
 });
  loadQuestion()
 
+const replayButton = document.getElementById ('replayButton');
 
+replayButton.addEventListener('click', () => {
+  currentQuestionIndex = 0
+  replayButton.style.display= 'none';
+  nextButton.style.display= 'inline-block';
+ loadQuestion()
+});

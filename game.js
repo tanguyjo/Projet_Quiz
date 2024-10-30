@@ -33,51 +33,36 @@ function loadQuestion(){                                                   //Dé
     optionsButton.classList.add('options-container');
     responses.appendChild(optionsButton); 
     
-    disableIfClicked(optionsButton)
+  //  disableIfClicked(optionsButton)
     checkAnswer(optionsButton)                                               //Vérification de la réponse choisie
   });
 }
-
-/* myFirstQuestion.options.forEach(options => {                                //Mise en place d'une boucle qui crée dynamiquement un bouton pour chaque options de réponse à la question 
-  const optionsButton = document.createElement('button');
-  optionsButton.disable = true;
-  optionsButton.classList.add('options-container');
-  responses.appendChild(optionsButton); 
-  
-  disableIfClicked(optionsButton)
-  checkAnswer(optionsButton)                                               //Vérification de la réponse choisie
-}) */
-
-/* function disableIfClicked(optionsButton){
-  const classResponseButtons = document.getElementsByClassName('options')
-  optionsButton.addEventListener('click', () => {
-  Array.from(classResponseButtons).forEach(button => { 
-  button.disabled = true})
-})} */
-
   function disableIfClicked(optionsButton) {
     // Get all elements with the class name 'options'
-    const classResponseButtons = document.getElementsByClassName('options');
-    
+   // const classResponseButtons = document.getElementsByClassName('options');
+    let tableButtons = document.querySelectorAll('.options button')
     // Add click event listener to the button
-    optionsButton.addEventListener('click', () => {
-      // Loop through each button and set the disabled property to true
-      Array.from(classResponseButtons).forEach(options => {
-        optionsButton.disabled = true;
-        console.log(optionsButton)
-      });
-    });
-  }
+      tableButtons.forEach(button => {
+      button.setAttribute('disabled', true)
+
+    })}
+
+
 
 function checkAnswer(optionsButton){                                               //Création de la fonction permettant de vérifier la bonne réponse
 
   optionsButton.addEventListener("click", ()=> {                                   //On écoute le click du bouton de réponse choisi par l'utilisateur
-    nextButton.removeAttribute('disabled');                                        //SUite au click d'une réponse on réactive le bouton suivant
+    nextButton.removeAttribute('disabled');
+   disableIfClicked(optionsButton)
+   //SUite au click d'une réponse on réactive le bouton suivant
     console.log(optionsButton.innerText)                                        
     console.log(correctAnswer)
      if (optionsButton.innerText === correctAnswer) {                             //Première condition : si le texte du bouton de réponse choisi par l'utilisateur = la bonne réponse :
+      optionsButton.style.border = '3px solid green'; 
       console.log(true)}      
     else {
+      optionsButton.style.border = '3px solid red';
+      correctAnswer.style.border = '3px solid green';
      console.log(false )
 } })}
 

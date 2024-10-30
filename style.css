@@ -1,0 +1,5 @@
+.options button {
+    padding: 3px 10px;
+    background-color: #ffffff; /* Couleur de fond par défaut */
+    border: 1px solid ; /* Contour par défaut */
+    cursor: pointer;}

@@ -18,7 +18,7 @@ const replayButton = document.getElementById ('replayButton');                  
 
 let myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex]
 
-
+let score = 0
 
 function loadQuestion(){                                                   //Déclaration de fonction pour charger la question sur la page
   responses.innerHTML =" ";                                                  //Vider les champs de réponses précédentes
@@ -48,7 +48,6 @@ function loadQuestion(){                                                   //Dé
     })}
 
 
-
 function checkAnswer(optionsButton){                                               //Création de la fonction permettant de vérifier la bonne réponse
 
   optionsButton.addEventListener("click", ()=> {                                   //On écoute le click du bouton de réponse choisi par l'utilisateur
@@ -59,12 +58,15 @@ function checkAnswer(optionsButton){                                            
     console.log(correctAnswer)
      if (optionsButton.innerText === correctAnswer) {                             //Première condition : si le texte du bouton de réponse choisi par l'utilisateur = la bonne réponse :
       optionsButton.style.border = '3px solid green'; 
+      score ++,
       console.log(true)}      
     else {
       optionsButton.style.border = '3px solid red';
       correctAnswer.style.border = '3px solid green';
      console.log(false )
-} })}
+}
+
+ })}
 
 
 loadQuestion()                                                                         //Appel de la fonction permettant de charger la question sur la page
@@ -79,11 +81,14 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
 } else {                                                                                //ajout d'une deuxième condition qui lors du dépassement de la limite de l'index :
   responses.innerHTML =" ";                                                             //vide les champs,de réponses
   correctAnswer = " "                                                                   //vide la bonne réponse
-  titleQuestion.innerText = "Fin du Quiz";                                              //Affiche un message a la place de la question
+  //titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"  ;            //Affiche un message a la place de la question
+  if (score>2){titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4" + " Bien ouej"}
+  else {titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"+ " Essaie Encore"}                                                                                     
   nextButton.style.display= 'none';                                                     //Cache le bouton suivant
   imageQuestion.setAttribute("src", " ")                                                //vide la source de l'image
   replayButton.style.display= 'inline-block';                                           //Affiche le bouton rejouer
-  currentQuestionIndex = 0                                                              //Reinitialise l'index de question à 0
+  currentQuestionIndex = 0  
+  score=0                                                            //Reinitialise l'index de question à 0
   correctAnswer =  quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer     // Réinitialise la bonne réponse en fonction de l'index
 }
 });

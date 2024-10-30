@@ -25,18 +25,28 @@ const button = document.getElementById ('nextButton');
 //   });
 
 let currentQuestionIndex = 0                                            //Declaration de variable pour initialiser la question à 0 (première question)
-let correctAnswer = quiz_whoPaintThat.questions[0].correct_answer       //Declaration de variable pour initialiser la bonne réponse à 0 (première réponse)
+let correctAnswer = quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer       //Declaration de variable pour initialiser la bonne réponse à 0 (première réponse)
 //const optionsButton = document.createElement('button');
 //const UserResponse = optionsButton.addEventListener('click') 
   
+/* function ifAnswerIsCliked(){
+  if (nextButton.disabled = false ) {
+    optionsButton.setAttribute('disabled', true);
+  } else {
+    optionsButton.setAttribute('disabled', false);
+  }
+} */
 
 function loadQuestion(){                                                   //Déclaration de fonction pour charger la question sur la page
   
+/* ifAnswerIsCliked(); */
+
   responses.innerHTML =" ";                                                  //Vider les champs de réponses précédentes
   const myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex];  //Déclaration de variable récupérant les éléments de la question en fonction de l'index
   titleQuestion.innerText = myFirstQuestion.text;                             //On injecte le texte de la question dans son emplacement
 
   imageQuestion.setAttribute("src", myFirstQuestion.image) ;                  //On attribue une nouvelle source a l'image en fonction de la question 
+  nextButton.setAttribute('disabled','');                                      //On desactive le bouton suivant
   myFirstQuestion.options.forEach(options => {                                //Mise en place d'une boucle qui crée dynamiquement un bouton pour chaque options de réponse à la question 
     const optionsButton = document.createElement('button');
     optionsButton.innerText = options;
@@ -89,9 +99,10 @@ replayButton.addEventListener('click', () => {                                  
 function checkAnswer(optionsButton){                                               //Création de la fonction permettant de vérifier la bonne réponse
 
   optionsButton.addEventListener("click", ()=> {                                   //On écoute le click du bouton de réponse choisi par l'utilisateur
+    nextButton.removeAttribute('disabled');                                        //SUite au click d'une réponse on réactive le bouton suivant
     console.log(optionsButton.innerText)                                        
     console.log(correctAnswer)
-     if (optionsButton.innerText == correctAnswer) {                             //Première condition : si le texte du bouton de réponse choisi par l'utilisateur = la bonne réponse :
+     if (optionsButton.innerText === correctAnswer) {                             //Première condition : si le texte du bouton de réponse choisi par l'utilisateur = la bonne réponse :
       console.log(true)}
       
       

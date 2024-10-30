@@ -16,10 +16,13 @@ let correctAnswer = quiz_whoPaintThat.questions[currentQuestionIndex].correct_an
 
 const replayButton = document.getElementById ('replayButton');                         //Declaration de variable qui récupère le bouton rejouer
 
+let myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex]
+
+
 
 function loadQuestion(){                                                   //Déclaration de fonction pour charger la question sur la page
   responses.innerHTML =" ";                                                  //Vider les champs de réponses précédentes
-  const myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex];  //Déclaration de variable récupérant les éléments de la question en fonction de l'index
+  myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex];  //Déclaration de variable récupérant les éléments de la question en fonction de l'index
   titleQuestion.innerText = myFirstQuestion.text;                             //On injecte le texte de la question dans son emplacement
 
   imageQuestion.setAttribute("src", myFirstQuestion.image) ;                  //On attribue une nouvelle source a l'image en fonction de la question 
@@ -30,9 +33,41 @@ function loadQuestion(){                                                   //Dé
     optionsButton.classList.add('options-container');
     responses.appendChild(optionsButton); 
     
+    disableIfClicked(optionsButton)
     checkAnswer(optionsButton)                                               //Vérification de la réponse choisie
   });
 }
+
+/* myFirstQuestion.options.forEach(options => {                                //Mise en place d'une boucle qui crée dynamiquement un bouton pour chaque options de réponse à la question 
+  const optionsButton = document.createElement('button');
+  optionsButton.disable = true;
+  optionsButton.classList.add('options-container');
+  responses.appendChild(optionsButton); 
+  
+  disableIfClicked(optionsButton)
+  checkAnswer(optionsButton)                                               //Vérification de la réponse choisie
+}) */
+
+/* function disableIfClicked(optionsButton){
+  const classResponseButtons = document.getElementsByClassName('options')
+  optionsButton.addEventListener('click', () => {
+  Array.from(classResponseButtons).forEach(button => { 
+  button.disabled = true})
+})} */
+
+  function disableIfClicked(optionsButton) {
+    // Get all elements with the class name 'options'
+    const classResponseButtons = document.getElementsByClassName('options');
+    
+    // Add click event listener to the button
+    optionsButton.addEventListener('click', () => {
+      // Loop through each button and set the disabled property to true
+      Array.from(classResponseButtons).forEach(options => {
+        optionsButton.disabled = true;
+        console.log(optionsButton)
+      });
+    });
+  }
 
 function checkAnswer(optionsButton){                                               //Création de la fonction permettant de vérifier la bonne réponse
 

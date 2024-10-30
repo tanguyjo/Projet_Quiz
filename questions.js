@@ -1,3 +1,5 @@
+//Variable contenant un tableau avec tout les éléments du quiz 
+
 export const quiz_whoPaintThat = {
     questions: [
       {

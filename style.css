@@ -35,11 +35,18 @@
 }
 
 #quiz-container {
+    display: block;
 margin-top: 125px;
+margin-left: 120px;
+
 column-count: 2;
 /* column-width: 350px; */
+align-items: center;
+}
 
-
+#textqcm {
+    display: block;
+  
 }
 .question {
     
@@ -60,11 +67,15 @@ column-count: 2;
     position: relative;
     left: 402px;
     
+    
 }
 .img{
 
  filter:   drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.24));
+ display: flex;
+ margin-left:100px ;
 }
+
 
 
 h1{

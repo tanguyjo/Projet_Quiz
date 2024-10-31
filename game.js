@@ -16,9 +16,9 @@ let correctAnswer = quiz_whoPaintThat.questions[currentQuestionIndex].correct_an
 
 const replayButton = document.getElementById ('replayButton');                         //Declaration de variable qui récupère le bouton rejouer
 
-let myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex]
+let myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex]               //Déclaration de variable récupérant les éléments de la question en fonction de l'index
 
-let score = 0
+let score = 0                                                                      //Declaration de la variable qui initialise le score de l'utilisateur à 0 
 
 function loadQuestion(){                                                   //Déclaration de fonction pour charger la question sur la page
   responses.innerHTML =" ";                                                  //Vider les champs de réponses précédentes
@@ -37,12 +37,11 @@ function loadQuestion(){                                                   //Dé
     checkAnswer(optionsButton)                                               //Vérification de la réponse choisie
   });
 }
-  function disableIfClicked(optionsButton) {
-    // Get all elements with the class name 'options'
-   // const classResponseButtons = document.getElementsByClassName('options');
-    let tableButtons = document.querySelectorAll('.options button')
-    // Add click event listener to the button
-      tableButtons.forEach(button => {
+  function disableIfClicked(optionsButton) {                               //Déclaration de la fonction  permettant de controler le comportement des boutons de réponse                                             
+   
+    let tableButtons = document.querySelectorAll('.options button')        //Declaration de la variable permettant de récupérer les boutons de réponses
+    
+      tableButtons.forEach(button => {                                    //Boucle parcourant chaque bouton et leur donne l'attribut disabled
       button.setAttribute('disabled', true)
 
     })}
@@ -51,18 +50,18 @@ function loadQuestion(){                                                   //Dé
 function checkAnswer(optionsButton){                                               //Création de la fonction permettant de vérifier la bonne réponse
 
   optionsButton.addEventListener("click", ()=> {                                   //On écoute le click du bouton de réponse choisi par l'utilisateur
-    nextButton.removeAttribute('disabled');
-   disableIfClicked(optionsButton)
-   //SUite au click d'une réponse on réactive le bouton suivant
+    nextButton.removeAttribute('disabled');                                       //Suite au click d'une réponse on réactive le bouton suivant
+   
+     disableIfClicked(optionsButton)                                              //Appel de la fonction qui désactive les boutons de réponses suite a un click 
+   
     console.log(optionsButton.innerText)                                        
     console.log(correctAnswer)
      if (optionsButton.innerText === correctAnswer) {                             //Première condition : si le texte du bouton de réponse choisi par l'utilisateur = la bonne réponse :
-      optionsButton.style.border = '3px solid green'; 
-      score ++,
+      optionsButton.style.border = '3px solid green';                             //Les bordures du bouton deviennent vertes 
+      score ++,                                                                   //Le score augmente 
       console.log(true)}      
-    else {
-      optionsButton.style.border = '3px solid red';
-      correctAnswer.style.border = '3px solid green';
+    else {                                                                        //Deuxiéme condition : si le texte du bouton de réponse choisi par l'utilisateur != la bonne réponse :
+      optionsButton.style.border = '3px solid red';                               //Les bordures du bouton deviennent rouges
      console.log(false )
 }
 
@@ -82,7 +81,7 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
   responses.innerHTML =" ";                                                             //vide les champs,de réponses
   correctAnswer = " "                                                                   //vide la bonne réponse
   //titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"  ;            //Affiche un message a la place de la question
-  if (score>2){titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4" + " Bien ouej"}
+  if (score>2){titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4" + " Bien joué !"}
   else {titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"+ " Essaie Encore"}                                                                                     
   nextButton.style.display= 'none';                                                     //Cache le bouton suivant
   imageQuestion.setAttribute("src", " ")                                                //vide la source de l'image

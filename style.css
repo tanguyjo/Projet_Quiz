@@ -1,5 +1,83 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Pour inclure les paddings et bordures dans la taille des éléments */
+
+
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Pour inclure les paddings et bordures dans la taille des éléments */
+    background-color: #5022E8;
+    height: 125px;
+    width:auto;
+}
 .options button {
     padding: 3px 10px;
     background-color: #ffffff; /* Couleur de fond par défaut */
-    border: 1px solid ; /* Contour par défaut */
-    cursor: pointer;}
+    border: solid ; /* Contour par défaut */
+    border-color: #E3E1E7;
+    cursor: pointer;
+    color: #5022E8;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5px;
+    border-width: 2px;
+    white-space: pre;
+    display: block;
+    margin-bottom: 12px;
+    width: 508px;
+    text-align: left
+
+    
+}
+
+#quiz-container {
+margin-top: 125px;
+column-count: 2;
+/* column-width: 350px; */
+
+
+}
+.question {
+    
+
+    color:#5022E8;
+    font-family: "Roboto", sans-serif;
+    font-weight : bold;
+    font-size: 16px;
+}
+.button-container button{
+    padding: 7px 15px;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    background-color:#5022E8;
+    border-radius: 29px;
+    font-size: 21px ;
+    margin-bottom: 12px;
+    position: relative;
+    left: 402px;
+    
+}
+.img{
+
+ filter:   drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.24));
+}
+
+
+h1{
+    font-family: "Roboto", sans-serif;
+    
+    font-size: 125px ;
+
+}
+.violet{
+    color:#5022E8;
+    background-color: #ffffff
+}
+
+.blanc {
+    color: rgb(255, 255, 255);
+}

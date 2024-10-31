@@ -7,6 +7,7 @@ export const quiz_whoPaintThat = {
         image: image.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/2560px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg',
         options: [
           "Paris",
+    
           "Saint-Tropez",
           "Carcassonne",
           "Saint-Rémy-de-Provence"

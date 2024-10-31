@@ -29,7 +29,7 @@ function loadQuestion(){                                                   //Dé
   nextButton.setAttribute('disabled','');                                      //On desactive le bouton suivant
   myFirstQuestion.options.forEach(options => {                                //Mise en place d'une boucle qui crée dynamiquement un bouton pour chaque options de réponse à la question 
     const optionsButton = document.createElement('button');
-    optionsButton.innerText = options;
+    optionsButton.innerText = options ;
     optionsButton.classList.add('options-container');
     responses.appendChild(optionsButton); 
     
@@ -45,7 +45,7 @@ function loadQuestion(){                                                   //Dé
       button.setAttribute('disabled', true)
 
     })}
-
+    
 
 function checkAnswer(optionsButton){                                               //Création de la fonction permettant de vérifier la bonne réponse
 

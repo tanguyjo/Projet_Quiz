@@ -36,8 +36,11 @@ margin-top: 125px;
 margin-left: 120px;
 
 column-count: 2;
-/* column-width: 350px; */
+column-width: 90px;
+column-gap: 6px;
 align-items: center;
+
+font-size: clamp(1rem, 0.3043rem + 3.4783vw, 3rem);
 }
 
 #textqcm {
@@ -64,7 +67,9 @@ align-items: center;
 .img{
  filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.24));
  display: flex;
- margin-left:100px ;
+ margin-left: 100px ;
+ width:100%;
+ max-width: 450px;
 }
 
 

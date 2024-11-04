@@ -48,7 +48,7 @@ function clear(){
 }
 
 //Déclarations de variables pour la barre de progression
-let maxBar = 4;  //Valeur maximale de la barre de progression
+let maxBar = quiz_whoPaintThat.questions.length;  //Valeur maximale de la barre de progression
 let currentBar = 0;  //Progression courante (que nous initialisons à zéro)
 let progressBar; //Objet javascript de la barre de progression
 

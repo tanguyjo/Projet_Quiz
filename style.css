@@ -3,8 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Pour inclure les paddings et bordures dans la taille des éléments */
-
-
 }
 
 #header {
@@ -30,8 +28,6 @@
     margin-bottom: 12px;
     width: 508px;
     text-align: left
-
-    
 }
 
 #quiz-container {
@@ -66,8 +62,7 @@ align-items: center;
     left: 402px;
 }
 .img{
-
- filter:   drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.24));
+ filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.24));
  display: flex;
  margin-left:100px ;
 }
@@ -110,7 +105,7 @@ h1{
     align-items: right;
     justify-content: right;
     height: fit-content;
-    margin-right: 10px;
+    margin-right: 90px;
 }
 
 .progressBarContainer {

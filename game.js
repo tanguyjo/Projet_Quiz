@@ -23,14 +23,14 @@ let score = 0                                                                   
 let timer;
 let ele = document.getElementById('timer');
 let sec =15;
-function startTimer (optionsButton){
+function startTimer (){
   timer = setInterval(()=>{
     if (sec >= 0) {
     ele.innerHTML = '00:' + (sec < 10 ? '0' : '') + sec;
     if (sec < 10) {
       ele.style.color = 'orange';
     }
-sec--;
+  sec--;
   } else{
     clearInterval(timer);
     ele.innerHTML="Time's up";
@@ -44,7 +44,7 @@ function clear(){
   sec =15;
   ele.innerHTML ='00:15'
   ele.style.color = '#5022E8';
-  startTimer ()
+  
 }
 
 //Déclarations de variables pour la barre de progression
@@ -63,7 +63,8 @@ function displayBar(){                                           //Déclaration 
   progressBar.value = currentBar ;                               //La nouvelle valeur de la barre devient la valeur courante
 }
 
-function loadQuestion(){                                                   //Déclaration de fonction pour charger la question sur la page
+function loadQuestion(){ 
+  startTimer()                                                  //Déclaration de fonction pour charger la question sur la page
   responses.innerHTML =" ";                                                  //Vider les champs de réponses précédentes
   myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex];  //Déclaration de variable récupérant les éléments de la question en fonction de l'index
   titleQuestion.innerText = myFirstQuestion.text;                             //On injecte le texte de la question dans son emplacement
@@ -112,7 +113,7 @@ function checkAnswer(optionsButton){                                            
 
  initialisation()                                                     //Appel de la fonction qui réinitialise la barre de progression
 loadQuestion()                                                       //Appel de la fonction permettant de charger la question sur la page
-startTimer()
+
 
 nextButton.addEventListener('click', ()=> {                          //On écoute l'évènement du click sur le bouton suivant
 displayBar() ;                                                     //On appelle la fonction qui ajoute 1 à la barre de progression
@@ -130,6 +131,7 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
   else {titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"+ " Essaie Encore"}                                                                                     
   nextButton.style.display= 'none';                                                     //Cache le bouton suivant
   imageQuestion.setAttribute("src", " ")                                                //vide la source de l'image
+  ele.innerHTML =" "
   replayButton.style.display= 'inline-block';                                           //Affiche le bouton rejouer
   currentQuestionIndex = 0                                           //Reinitialise l'index de question à 0
   score=0                                                            //Reinitialise le score à 0
@@ -142,10 +144,10 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
 replayButton.addEventListener('click', () => {                                          //On écoute le click sur le bouton rejouer
   replayButton.style.display= 'none';                                                  //Suite au click le bouton rejouer disparait 
   nextButton.style.display= 'inline-block';                                            //Le bouton suivant apparait 
- 
+  clear()
  initialisation()                                                                      //Appel de la fonction pour réinitialiser la barre de progression
  loadQuestion()                                                                        //Appel de la fonction pour charger la question
- startTimer()
+
 });
 
 

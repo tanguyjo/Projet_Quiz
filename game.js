@@ -129,6 +129,20 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
   //titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"  ;            //Affiche un message a la place de la question
   if (score>2){titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4" + " Bien joué !"}
   else {titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"+ " Essaie Encore"}                                                                                     
+ 
+  /* let scores = JSON.parse(localStorage.getItem('userScores')) || [];
+  scores.push(score);
+  localStorage.setItem('userScores', JSON.stringify(scores)); */
+
+  // Récupère le nombre total de scores enregistrés
+  let scoreCount = parseInt(localStorage.getItem('scoreCount') || '0');
+
+  // Sauvegarder le score actuel avec une clé unique
+  localStorage.setItem(`userScore_${scoreCount + 1}`, score);
+
+  // Incrémenter le compteur de scores et le sauvegarder
+  localStorage.setItem('scoreCount', scoreCount + 1);
+
   nextButton.style.display= 'none';                                                     //Cache le bouton suivant
   imageQuestion.setAttribute("src", " ")                                                //vide la source de l'image
   ele.innerHTML =" "

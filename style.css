@@ -89,6 +89,10 @@ h1{
     color: rgb(255, 255, 255);
 }
 
+* {
+    cursor: url("FAUT EN TROUVER UN"), auto;
+}
+
 #timer {
     position: relative;
     background-color: #FFFFFF;

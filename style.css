@@ -158,3 +158,37 @@ progress::-moz-progress-bar {
         width: 100%;
     }
 }
+
+
+#menuBody{
+
+    background-color: #5022E8;
+    text-align: center;
+}
+
+#menuQuiz{
+    text-align: center;
+   color: #FFFFFF;
+   font-family: "Roboto", sans-serif;
+   font-size: 134px ;
+   margin: 190px;
+
+}
+
+.buttonQuiz{
+    position:relative;
+    bottom: 120px;
+    padding: 7px 15px;
+    font-family: "Roboto", sans-serif;
+    color:#5022E8;
+    background-color:#FFFFFF;
+    border-color:#5022E8;
+    border-radius: 10px;
+    font-size: 21px ;
+    font-weight: bold;
+    margin-bottom: left;
+   margin: 50px;
+   width: 150px;
+   text-align: center;
+  gap: 20px;
+}

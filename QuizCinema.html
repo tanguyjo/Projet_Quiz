@@ -1,0 +1,87 @@
+<!-- Squelette de la page -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Game</title>
+<link rel="stylesheet" href="style.css">
+	<!-- Importe ici ton fichier JavaScript -->
+	<script defer type="module" src="gamecinema.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<header id="header">
+
+<h1> <span class="violet">ART </span>
+    <span class="blanc">‎ QUIZ .</span></h1>
+
+
+
+
+</header>
+<body> 
+    
+	<!-- Placement de la barre de progression -->
+	<br>
+<div class="progressBar">
+	<section>
+		<div class="titleBarContainer"> Ma progression
+		</div>
+		
+		<div class="progressBarContainer">
+			<progress id="progressBar" max="100" value="0">100</progress> 
+		</div>
+	</section>
+</div>
+
+	<div id="quiz-container">                   <!-- Contenu de tout les éléments -->
+	 
+	  
+  
+	 <div>
+	  <img class="img" id="image"/>
+		<!-- L'image sera injectée ici par JavaScript -->
+	</div>
+	 
+	
+	<br><br>
+	<div id= "textqcm">
+	 
+		<div  class="question" id="question-text">         
+		<!-- La question sera injectée ici par JavaScript -->
+	  </div> <br>
+	
+	<div class="options" id="options-container" > 
+		
+		<!-- Les options seront injectées ici par JavaScript -->
+	  </div>
+  
+	 </div>
+	  
+	
+	
+	
+	 <br>
+	 
+	  <div class="button-container">                   <!-- Conteneur de boutons -->
+		<button id="nextButton">Suivant</button>  
+		                           <!-- Bouton suivant --> 
+	<div id="timer">
+        00:15 </div>
+		
+	<button id="replayButton" style="display: none;">Rejouer</button>     <!-- Bouton rejouer -->
+	  </div>
+	</div>
+	
+
+	<div id="changePage">
+		<a href="score.html">Mon score</a>
+	</div>
+	
+		
+  <body>
+</html> 

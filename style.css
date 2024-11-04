@@ -49,8 +49,6 @@ align-items: center;
   
 }
 .question {
-    
-
     color:#5022E8;
     font-family: "Roboto", sans-serif;
     font-weight : bold;
@@ -66,8 +64,6 @@ align-items: center;
     margin-bottom: 12px;
     position: relative;
     left: 402px;
-    
-    
 }
 .img{
 
@@ -91,4 +87,78 @@ h1{
 
 .blanc {
     color: rgb(255, 255, 255);
+}
+
+#timer {
+    position: relative;
+    background-color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px ;
+    color: #5022E8;
+    width: 100px;
+    left: 200px;
+    font-weight: bolder;
+    text-align:center;
+}
+
+.progressBar{
+    font-family: "Roboto", sans-serif;
+    font-weight: bolder;
+    color:#5022E8;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    height: fit-content;
+    margin-right: 10px;
+}
+
+.progressBarContainer {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    background-color: #fefbfb;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 16px;
+    margin-top: 10px;
+}
+
+progress {
+    width: 100%;
+    appearance: none;
+    border: none;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-value {
+    background-color: #f3f3f3;
+}
+
+progress::-webkit-progress-value {
+    background-color: #5022E8;
+    transition: width 0.5s ease-in-out;  /* Animation de transition */
+}
+
+progress::-moz-progress-bar {
+    background-color: #5022E8;
+    transition: width 0.5s ease-in-out;  /* Animation de transition */
+}
+
+/* Style pour le fond de la barre de progression */
+progress::-webkit-progress-bar {
+    background-color: #ebebeb; 
+}
+progress::-moz-progress-bar {
+    background-color: #ebebeb; 
+}
+
+
+@keyframes progress-animation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }

@@ -5,6 +5,20 @@
     box-sizing: border-box; /* Pour inclure les paddings et bordures dans la taille des éléments */
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.button-container button {
+    all: unset; /* Retire tous les styles de base */
+    cursor: pointer; /* Indique que c'est un bouton cliquable */
+}
+
+
+
+
 #header {
     margin: 0;
     padding: 0;
@@ -91,7 +105,7 @@ h1{
 }
 
 * {
-    cursor: url("FAUT EN TROUVER UN"), auto;
+    cursor: url("A TROUVER"), auto;
 }
 
 #timer {
@@ -186,6 +200,8 @@ progress::-moz-progress-bar {
 }
 
 .buttonQuiz{
+    all: unset; /* Retire tous les styles de base */
+    cursor: pointer; /* Indique que c'est un bouton cliquable */
     position:relative;
     bottom: 120px;
     padding: 7px 15px;
@@ -221,4 +237,63 @@ progress::-moz-progress-bar {
 .buttonQuiz :hover {
     transform: scale(1.1);
     background-color: whitesmoke;
+}
+
+
+.options :hover {
+    transform: scale(1.1);
+    background-color: whitesmoke;
+ 
+}
+
+.button-container :hover{
+
+    transform: scale(1.1); /* Scale up the button on hover */
+    background-color:#6c46e6; /* Lighter, semi-transparent background color */
+
+}
+
+
+.buttonQuiz :hover {
+    transform: scale(1.1);
+    background-color: whitesmoke;
+}
+
+#scoreBackround{
+    background-color:#5022E8;
+    height: 100%;
+}
+
+#titleMesScores{
+    color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+#tryNumber{
+    color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+#myScores{
+    color:chocolate;
+}
+
+#changePage{
+    color: rgb(221, 255, 0);
+    color:#5022E8;
+    background-color:#FFFFFF;
+    border-color:#5022E8;
+    border-radius: 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 21px ;
+    font-weight: bold;
+}
+
+a, a:visited, a:hover, a:active {
+    text-decoration: none; /* Retire le soulignement */
+    color: inherit;        /* Couleur héritée ou modifiez par une couleur spécifique */
+    cursor: pointer;       /* Curseur pour indiquer que c'est un lien */
 }

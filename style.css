@@ -27,7 +27,8 @@
     display: block;
     margin-bottom: 12px;
     width: 508px;
-    text-align: left
+    text-align: left;
+    transition: transform 0.5s ease, background-color 0.5s ease; 
 }
 
 #quiz-container {
@@ -200,4 +201,24 @@ progress::-moz-progress-bar {
    width: 150px;
    text-align: center;
   gap: 20px;
+}
+
+
+.options :hover {
+    transform: scale(1.1);
+    background-color: whitesmoke;
+ 
+}
+
+.button-container :hover{
+
+    transform: scale(1.1); /* Scale up the button on hover */
+    background-color:#6c46e6; /* Lighter, semi-transparent background color */
+
+}
+
+
+.buttonQuiz :hover {
+    transform: scale(1.1);
+    background-color: whitesmoke;
 }

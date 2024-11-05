@@ -17,7 +17,7 @@ let correctAnswer = quiz_architecture.questions[currentQuestionIndex].correct_an
 const replayButton = document.getElementById ('replayButton');                         //Declaration de variable qui récupère le bouton rejouer
 
 let myFirstQuestion = quiz_architecture.questions[currentQuestionIndex]               //Déclaration de variable récupérant les éléments de la question en fonction de l'index
-
+let optionsButton = document.createElement('button');     
 let score = 0                                                                      //Declaration de la variable qui initialise le score de l'utilisateur à 0 
 
 let timer;
@@ -72,7 +72,7 @@ function loadQuestion(){
   imageQuestion.setAttribute("src", myFirstQuestion.image) ;                  //On attribue une nouvelle source a l'image en fonction de la question 
   nextButton.setAttribute('disabled','');                                      //On desactive le bouton suivant
   myFirstQuestion.options.forEach(options => {                                //Mise en place d'une boucle qui crée dynamiquement un bouton pour chaque options de réponse à la question 
-    const optionsButton = document.createElement('button');
+    optionsButton = document.createElement('button');
     optionsButton.innerText = options ;
     optionsButton.classList.add('options-container');
     responses.appendChild(optionsButton); 

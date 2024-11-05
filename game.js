@@ -1,4 +1,6 @@
-import {quiz_whoPaintThat} from './questions.js';      //Fonction qui importe le tableau de question depuis question.js 
+import { quiz_whoPaintThat } from './questions.js';      //Fonction qui importe le tableau de question depuis question.js 
+import { quiz_cinema } from './questionscinema.js'
+import { quiz_architecture } from './questionsArchitecture.js'
 
 const quiz = document.getElementById ('quiz-container');    //Declaration de variables pour récupérer chaque éléments du quiz
 
@@ -15,14 +17,21 @@ const endText = document.getElementById ('endText');
 const scoreText = document.getElementById ('scoreText');
 
 const endMessage = document.getElementById ('endMessage');
+let chosenquiz = localStorage.getItem('quiz');
+
+const quizes = {
+  quiz_whoPaintThat : quiz_whoPaintThat,
+  quiz_cinema : quiz_cinema,
+  quiz_architecture : quiz_architecture
+}
 
 let currentQuestionIndex = 0                                            //Declaration de variable pour initialiser la question à 0 (première question)
 
-let correctAnswer = quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer       //Declaration de variable pour initialiser la bonne réponse à 0 (première réponse)
+let correctAnswer = quizes[chosenquiz].questions[currentQuestionIndex].correct_answer       //Declaration de variable pour initialiser la bonne réponse à 0 (première réponse)
 
 const replayButton = document.getElementById ('replayButton');                         //Declaration de variable qui récupère le bouton rejouer
 
-let myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex] 
+let myFirstQuestion = quizes[chosenquiz].questions[currentQuestionIndex] 
 
 let optionsButton = document.createElement('button');              //Déclaration de variable récupérant les éléments de la question en fonction de l'index
 
@@ -31,35 +40,7 @@ let score = 0                                                                   
 let timer;
 let ele = document.getElementById('timer');
 let sec =15;
-
-let defaults = {
-  spread: 360,
-  ticks: 50,
-  gravity: 0,
-  decay: 0.94,
-  startVelocity: 30,
-  colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8']
-};
-
-function shoot() {
-  confetti({
-    ...defaults,
-    particleCount: 40,
-    scalar: 1.2,
-    shapes: ['star']
-  });
-
-  confetti({
-    ...defaults,
-    particleCount: 10,
-    scalar: 0.75,
-    shapes: ['circle']
-  });
-}
-
-setTimeout(shoot, 0);
-setTimeout(shoot, 100);
-setTimeout(shoot, 200);
+  
 
 
 function startTimer (){
@@ -87,7 +68,7 @@ function clear(){
 }
 
 //Déclarations de variables pour la barre de progression
-let maxBar = quiz_whoPaintThat.questions.length;  //Valeur maximale de la barre de progression
+let maxBar = quizes[chosenquiz].questions.length;  //Valeur maximale de la barre de progression
 let currentBar = 0;  //Progression courante (que nous initialisons à zéro)
 let progressBar; //Objet javascript de la barre de progression
 
@@ -105,7 +86,7 @@ function displayBar(){                                           //Déclaration 
 function loadQuestion(){ 
   startTimer()                                                  //Déclaration de fonction pour charger la question sur la page
   responses.innerHTML =" ";                                                  //Vider les champs de réponses précédentes
-  myFirstQuestion = quiz_whoPaintThat.questions[currentQuestionIndex];  //Déclaration de variable récupérant les éléments de la question en fonction de l'index
+  myFirstQuestion = quizes[chosenquiz].questions[currentQuestionIndex];  //Déclaration de variable récupérant les éléments de la question en fonction de l'index
   titleQuestion.innerText = myFirstQuestion.text;                             //On injecte le texte de la question dans son emplacement
 
   imageQuestion.setAttribute("src", myFirstQuestion.image) ;                  //On attribue une nouvelle source a l'image en fonction de la question 
@@ -163,8 +144,8 @@ displayBar() ;                                                     //On appelle 
 currentQuestionIndex ++ ;                                         // Lors du click on ajoute 1 à l'index
 clear(); 
 
-if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                  //ajout d'une première condition qui charge la question suivante tant qu'on ne dépasse pas la limite de l'index
-  correctAnswer =  quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer
+if (currentQuestionIndex < quizes[chosenquiz].questions.length) {                  //ajout d'une première condition qui charge la question suivante tant qu'on ne dépasse pas la limite de l'index
+  correctAnswer =  quizes[chosenquiz].questions[currentQuestionIndex].correct_answer
   loadQuestion();
 } else {                                                                                //ajout d'une deuxième condition qui lors du dépassement de la limite de l'index :
   responses.innerHTML =" ";                                                             //vide les champs,de réponses
@@ -178,7 +159,7 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
     endText.innerText = "Fin du quiz";
     scoreText.innerText = "Votre score est de " + score + "/4 !"; 
     endMessage.innerText = "Bien joué !"
-    shoot()}
+  }
  else {titleQuestion.innerText = " ";
   endText.innerText = "Fin du quiz";
   scoreText.innerText = "Votre score est de " + score + "/4 !"; 
@@ -204,7 +185,7 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
   currentQuestionIndex = 0                                           //Reinitialise l'index de question à 0
   score=0                                                            //Reinitialise le score à 0
   currentBar = 0                                                     //Reinitialise la barre de progression à 0
-  correctAnswer = quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer     // Réinitialise la bonne réponse en fonction de l'index
+  correctAnswer = quizes[chosenquiz].questions[currentQuestionIndex].correct_answer     // Réinitialise la bonne réponse en fonction de l'index
 }
 });
  

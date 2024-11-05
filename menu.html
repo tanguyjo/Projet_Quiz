@@ -6,7 +6,7 @@
 <title>Quiz Game</title>
 <link rel="stylesheet" href="style.css">
 	<!-- Importe ici ton fichier JavaScript -->
-	<script defer type="module" src="game.js"></script>
+	
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,21 +24,32 @@
    
 	
  <div id=" optionMenu">
-<a href="index.html">
-<button class="buttonQuiz"> Peinture</button>
-</a>
+
+<button class="buttonQuiz" data-quizname="quiz_whoPaintThat"> Peinture</button>
 
 
-<a href="QuizCinema.html"> 
-  <button class="buttonQuiz">Cinema</button>
-  </a>
 
 
-<a href="QuizArchitecture.html"> 
-  <button class="buttonQuiz">Architecture</button>
-  </a>
+  <button class="buttonQuiz" data-quizname="quiz_cinema">Cinema</button>
+  
+
+
+
+  <button class="buttonQuiz" data-quizname="quiz_architecture">Architecture</button>
+ 
 
 
 	</div>	
+  <script>
+const buttons = document.querySelectorAll('.buttonQuiz');
+buttons.forEach(button => {
+  button.addEventListener ('click', ()=> {
+   // console.log(button.dataset.quizname)
+    localStorage.setItem('quiz',`${button.dataset.quizname}`);
+    window.location.href='index.html'
+  })
+});
+
+  </script>
   <body>
 </html> 

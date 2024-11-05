@@ -154,7 +154,9 @@ progress {
 progress::-webkit-progress-value {
     background-color: #f3f3f3;
 }
-
+progress::-moz-progress-bar {
+    background-color: #f3f3f3;
+}
 progress::-webkit-progress-value {
     background-color: #5022E8;
     transition: width 0.5s ease-in-out;  /* Animation de transition */

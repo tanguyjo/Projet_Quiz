@@ -45,17 +45,33 @@ html, body {
     transition: transform 0.5s ease, background-color 0.5s ease; 
 }
 
+#end-container {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #5022E8;
+    text-align: center;
+  
+}
+
+#scoreText {
+   font-size: 40pt;
+}
+
+#endMessage {
+    font-size: 20pt;
+}
+
 #quiz-container {
     display: block;
-margin-top: 125px;
-margin-left: 120px;
+    margin-top: 100px;
+    margin-left: 120px;
 
-column-count: 2;
-column-width: 90px;
-column-gap: 6px;
-align-items: center;
+    column-count: 2;
+    column-width: 90px;
+    column-gap: 6px;
+    align-items: center;
 
-font-size: clamp(1rem, 0.3043rem + 3.4783vw, 3rem);
+    font-size: clamp(1rem, 0.3043rem + 3.4783vw, 3rem);
 }
 
 #textqcm {
@@ -220,6 +236,7 @@ progress::-moz-progress-bar {
    text-align: center;
   gap: 20px;
 }
+
 
 
 .options :hover {

@@ -10,6 +10,12 @@ const responses = document.getElementById ('options-container');
 
 const button = document.getElementById ('nextButton');
 
+const endText = document.getElementById ('endText');
+
+const scoreText = document.getElementById ('scoreText');
+
+const endMessage = document.getElementById ('endMessage');
+
 let currentQuestionIndex = 0                                            //Declaration de variable pour initialiser la question à 0 (première question)
 
 let correctAnswer = quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer       //Declaration de variable pour initialiser la bonne réponse à 0 (première réponse)
@@ -25,6 +31,37 @@ let score = 0                                                                   
 let timer;
 let ele = document.getElementById('timer');
 let sec =15;
+
+let defaults = {
+  spread: 360,
+  ticks: 50,
+  gravity: 0,
+  decay: 0.94,
+  startVelocity: 30,
+  colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8']
+};
+
+function shoot() {
+  confetti({
+    ...defaults,
+    particleCount: 40,
+    scalar: 1.2,
+    shapes: ['star']
+  });
+
+  confetti({
+    ...defaults,
+    particleCount: 10,
+    scalar: 0.75,
+    shapes: ['circle']
+  });
+}
+
+setTimeout(shoot, 0);
+setTimeout(shoot, 100);
+setTimeout(shoot, 200);
+
+
 function startTimer (){
   timer = setInterval(()=>{
     if (sec >= 0) {
@@ -78,6 +115,10 @@ function loadQuestion(){
     optionsButton.innerText = options ;
     optionsButton.classList.add('options-container');
     responses.appendChild(optionsButton); 
+
+    endText.innerText = " ";
+    scoreText.innerText = " "; 
+    endMessage.innerText = " ";
     
   //  disableIfClicked(optionsButton)
     checkAnswer(optionsButton)                                               //Vérification de la réponse choisie
@@ -129,8 +170,19 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
   responses.innerHTML =" ";                                                             //vide les champs,de réponses
   correctAnswer = " "                                                                   //vide la bonne réponse
   //titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"  ;            //Affiche un message a la place de la question
-  if (score>2){titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4" + " Bien joué !"}
-  else {titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"+ " Essaie Encore"}                                                                                     
+  
+  //if (score>2){titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4" + " Bien joué !"}
+  //else {titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"+ " Essaie Encore"}     
+  
+  if (score>2){titleQuestion.innerText = " ";
+    endText.innerText = "Fin du quiz";
+    scoreText.innerText = "Votre score est de " + score + "/4 !"; 
+    endMessage.innerText = "Bien joué !"
+    shoot()}
+ else {titleQuestion.innerText = " ";
+  endText.innerText = "Fin du quiz";
+  scoreText.innerText = "Votre score est de " + score + "/4 !"; 
+  endMessage.innerText = " Essaie encore :)"}  
  
   /* let scores = JSON.parse(localStorage.getItem('userScores')) || [];
   scores.push(score);
@@ -152,7 +204,7 @@ if (currentQuestionIndex < quiz_whoPaintThat.questions.length) {                
   currentQuestionIndex = 0                                           //Reinitialise l'index de question à 0
   score=0                                                            //Reinitialise le score à 0
   currentBar = 0                                                     //Reinitialise la barre de progression à 0
-  correctAnswer =  quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer     // Réinitialise la bonne réponse en fonction de l'index
+  correctAnswer = quiz_whoPaintThat.questions[currentQuestionIndex].correct_answer     // Réinitialise la bonne réponse en fonction de l'index
 }
 });
  

@@ -49,8 +49,7 @@ html, body {
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     color: #5022E8;
-    text-align: center;
-  
+    text-align:justify;
 }
 
 #scoreText {

@@ -306,7 +306,7 @@ progress::-moz-progress-bar {
 #buttonarchitecture:hover:after {
   opacity: 1;
   right: 10px;
-
+}
 
 
 
@@ -416,7 +416,7 @@ a, a:visited, a:hover, a:active {
     justify-content: flex-end;     /* Aligne les éléments horizontalement à droite */
     align-items: center;         /* Aligne les éléments verticalement au centre */
     gap: 30px;                   /* Espace entre les éléments (facultatif) */
-
+}
 .scrollable-div {
     height: 450px;   
     width:fit-content;   

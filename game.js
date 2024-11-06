@@ -25,14 +25,6 @@ const quizes = {
   quiz_architecture : quiz_architecture
 }
 
-let chosenquiz = localStorage.getItem('quiz');
-
-const quizes = {
-  quiz_whoPaintThat : quiz_whoPaintThat,
-  quiz_cinema : quiz_cinema,
-  quiz_architecture : quiz_architecture
-}
-
 let currentQuestionIndex = 0                                            //Declaration de variable pour initialiser la question à 0 (première question)
 
 let correctAnswer = quizes[chosenquiz].questions[currentQuestionIndex].correct_answer       //Declaration de variable pour initialiser la bonne réponse à 0 (première réponse)

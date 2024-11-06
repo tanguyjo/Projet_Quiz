@@ -23,7 +23,13 @@
     
 	<!-- Placement de la barre de progression -->
 <br>
-	<div class="progressBar">
+	
+
+	
+<div class="topContainer">
+    <button id="menuButton" onclick="window.location.href='menu.html';">Menu</button>
+	<button id="changePageToScore" onclick="window.location.href='score.html';">Mes scores</button>
+    <div class="progressBar">
 		<section>
 			<div class="titleBarContainer"> Ma progression</div>
 			<div class="progressBarContainer">
@@ -31,8 +37,12 @@
 			</div>
 		</section>	
 	</div>
+</div>
+
+	
 
 	<div id="end-container">
+		<br><br><br><br><br>
 		<p id="endText">
 			<!-- La phrase de fin sera injectée ici par JavaScript -->
 		</p>
@@ -71,14 +81,21 @@
         	00:15 
 		</div>
 			<button id="replayButton" style="display: none;">Rejouer</button>     <!-- Bouton rejouer -->
-	 	</div>
 	</div>
 	
 
-	<div id="changePageToScore">
+	
+	
+
+
+	<!-- <div>
+		<a href="score.html" id="changePageToScore" class="scoreButton" >Mes scores</a>
+	</div> -->
+
+	<!-- <div id="changePageToScore">
 		<a href="score.html">Mes scores</a>
 	</div>
-	
+	 -->
 	
 
 <body>

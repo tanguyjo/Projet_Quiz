@@ -17,6 +17,7 @@ const endText = document.getElementById ('endText');
 const scoreText = document.getElementById ('scoreText');
 
 const endMessage = document.getElementById ('endMessage');
+
 let chosenquiz = localStorage.getItem('quiz');
 
 const quizes = {
@@ -92,7 +93,7 @@ function loadQuestion(){
   imageQuestion.setAttribute("src", myFirstQuestion.image) ;                  //On attribue une nouvelle source a l'image en fonction de la question 
   nextButton.setAttribute('disabled','');                                      //On desactive le bouton suivant
   myFirstQuestion.options.forEach(options => {                                //Mise en place d'une boucle qui crée dynamiquement un bouton pour chaque options de réponse à la question 
-     optionsButton = document.createElement('button');
+    optionsButton = document.createElement('button');
     optionsButton.innerText = options ;
     optionsButton.classList.add('options-container');
     responses.appendChild(optionsButton); 
@@ -100,6 +101,7 @@ function loadQuestion(){
     endText.innerText = " ";
     scoreText.innerText = " "; 
     endMessage.innerText = " ";
+   
     
   //  disableIfClicked(optionsButton)
     checkAnswer(optionsButton)                                               //Vérification de la réponse choisie
@@ -148,7 +150,7 @@ if (currentQuestionIndex < quizes[chosenquiz].questions.length) {               
   correctAnswer =  quizes[chosenquiz].questions[currentQuestionIndex].correct_answer
   loadQuestion();
 } else {                                                                                //ajout d'une deuxième condition qui lors du dépassement de la limite de l'index :
-  responses.innerHTML =" ";                                                             //vide les champs,de réponses
+  responses.innerHTML =" ";                                                             //vide les champs de réponses
   correctAnswer = " "                                                                   //vide la bonne réponse
   //titleQuestion.innerText = "Fin du Quiz, votre score est: " + score+"/4"  ;            //Affiche un message a la place de la question
   

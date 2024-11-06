@@ -130,7 +130,7 @@ function checkAnswer(optionsButton){                                            
       console.log(true)}      
     else {                                                                        //Deuxiéme condition : si le texte du bouton de réponse choisi par l'utilisateur != la bonne réponse :
       optionsButton.style.border = '3px solid red';                               //Les bordures du bouton deviennent rouges
-     console.log(false )
+     console.log(false)
 }
 
  })}

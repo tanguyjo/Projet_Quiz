@@ -10,7 +10,7 @@ function allScoresHistory() {
     let scoreCount = parseInt(localStorage.getItem('scoreCount') || '0');
     for (let i = 1; i <= scoreCount; i++) {
     let score = localStorage.getItem(`userScore_${i}`);
-    allScores.innerHTML += `Tentative ${i} : ${score}/4 `;
+    allScores.innerHTML += `<br>Tentative ${i} : ‎ ‎ ‎  ${score}/4 <br>`;
     }
 }
 
@@ -18,7 +18,7 @@ allScoresHistory()
 
 function totalOfTry() {
     scoreCount
-    allTry.innerHTML =  scoreCount + " Tentatives";
+    allTry.innerHTML =  scoreCount + " Tentatives...";
 }
 
 totalOfTry()

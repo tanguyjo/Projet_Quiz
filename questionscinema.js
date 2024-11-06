@@ -6,10 +6,10 @@ export const quiz_cinema = {
         image: image.src='https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2023/09/scarface1-tt-width-1600-height-1067-crop-0-bgcolor-000000.jpg',
         options: [
           "Quentin Tarantino",
-    
+          "Brian De Palma",
           "Steven Spielberg",
-          "Ridley Scott",
-          "Brian De Palma"
+          "Ridley Scott"
+          
         ],
         correct_answer: "Brian De Palma" 
       },
@@ -17,9 +17,9 @@ export const quiz_cinema = {
         text: "Qui a réalisé Beetlejuice?",
         image: image.src='https://www.ecrannoir.fr/wp-content/uploads/2024/09/BeetlejuiceBeetlejuice-bloc.jpg',
         options: [
+          "Wes Anderson",
           "Tim burton",
           "Christopher Nolan",
-          "Wes Anderson",
           "Wes Craven"
         ],
         correct_answer: "Tim burton" 
@@ -41,10 +41,10 @@ export const quiz_cinema = {
         text: "Qui a réalisé the Truman Show?",
         image: image.src='https://metrograph.imgix.net/2023/10/the-truman-show.jpeg?fm=pjpg&ixlib=php-3.3.1',
         options: [
-          "Mel Gibson",
-          "Peter Weir",
+          "Mel Gibson", 
           "George Miller",
-          "Randal Kleiser"
+          "Randal Kleiser",
+          "Peter Weir",
         ],
         correct_answer: "Peter Weir"
       },

@@ -39,39 +39,41 @@ let correctAnswer = quizes[chosenquiz].questions[currentQuestionIndex].correct_a
 
 const replayButton = document.getElementById ('replayButton');                         //Declaration de variable qui récupère le bouton rejouer
 
-let myFirstQuestion = quizes[chosenquiz].questions[currentQuestionIndex] 
+let myFirstQuestion = quizes[chosenquiz].questions[currentQuestionIndex] //Déclaration de variable récupérant les éléments de la question en fonction de l'index
 
-let optionsButton = document.createElement('button');              //Déclaration de variable récupérant les éléments de la question en fonction de l'index
+let optionsButton = document.createElement('button');              
 
 let score = 0                                                                      //Declaration de la variable qui initialise le score de l'utilisateur à 0 
 
-let timer;
-let ele = document.getElementById('timer');
-let sec =15;
+let timer;                                                                        // Declaration de la variable timer 
+let ele = document.getElementById('timer');                                             // declare la variable ele qui elle va recuperer l'element timer du quiz
+let sec =15;                                                                        //Declaration de la variable sec qui initialise le chrono a 15 secondes
   
 
-
-function startTimer (){
-  timer = setInterval(()=>{
-    if (sec >= 0) {
-    ele.innerHTML = '00:' + (sec < 10 ? '0' : '') + sec;
-    if (sec < 10) {
-      ele.style.color = 'orange';
+//localStorage.clear()
+function startTimer (){                                                                 //Declaration de la fonction Timer 
+  timer = setInterval(()=>{                                                              //fonction qui fait une commande a des intervalles de milliseconde donnee
+    if (sec >= 0) {                                                                     // Condition tant que le timer est superieur ou egal a 0
+    ele.innerHTML = '00:' + (sec < 10 ? '0' : '') + sec;                                // on affiche le temps ecrouler et si les secondes sont inf a 10 on affiche 00:0(seconde) 
+    if (sec < 10) {                                                                   // si il reste moins de 10s
+      ele.style.color = 'orange';                                                    // Change la couleur du texte du timer pour signaler a l'utilisateur du peu de temps restant 
     }
-  sec--;
-  } else{
-    clearInterval(timer);
-    ele.innerHTML="Time's up";
-    ele.style.color = 'red';
-    nextButton.disabled = false
-    disableIfClicked(optionsButton)
+  sec--;                                                                               // enleve 1 seconde
+  } else{                                                                             // si le timer est terminer
+    clearInterval(timer);                                                             // on arreter la fonction interval
+    ele.innerHTML="Time's up";                                                        // On affiche que le temps est écoulé 
+    ele.style.color = 'red';                                                          // On affiche le message en rouge
+    nextButton.disabled = false                                                        // On active le bouton suivant
+    disableIfClicked(optionsButton)                                                     // on deactive les options reponses
   }
-  }, 1000);}
-function clear(){
-  clearInterval(timer);
-  sec =15;
-  ele.innerHTML ='00:15'
-  ele.style.color = '#5022E8';
+  }, 1000);}                                                                             // on choisis l'interval de 1s(1000ms) pour faire la bouble de setinterval
+
+
+  function clear(){                                                                      // Declaration de la fonction clear 
+  clearInterval(timer);                                                                  // clear l'interval du timer
+  sec =15;                                                                                // reinitialise le timer a 15s
+  ele.innerHTML ='00:15'                                                                  // reaffiche le timer a 00:15 en html
+  ele.style.color = '#5022E8';                                                             // remet le timer en bonne couleur
   
 }
 
@@ -105,7 +107,7 @@ function loadQuestion(){
     optionsButton.classList.add('options-container');
     responses.appendChild(optionsButton); 
 
-    endText.innerText = " ";
+    endText.innerText = " ";                                                       //On vide les elements suivants: endText, scoreText et endMessage
     scoreText.innerText = " "; 
     endMessage.innerText = " ";
    
@@ -131,8 +133,8 @@ function checkAnswer(optionsButton){                                            
    
      disableIfClicked(optionsButton)                                              //Appel de la fonction qui désactive les boutons de réponses suite a un click 
    
-    console.log(optionsButton.innerText)                                        
-    console.log(correctAnswer)
+    //console.log(optionsButton.innerText)                                        
+   // console.log(correctAnswer)
      if (optionsButton.innerText === correctAnswer) {                             //Première condition : si le texte du bouton de réponse choisi par l'utilisateur = la bonne réponse :
       optionsButton.style.border = '3px solid green';                             //Les bordures du bouton deviennent vertes 
       score ++,                                                                   //Le score augmente 

@@ -216,7 +216,7 @@ progress::-moz-progress-bar {
 
 }
 
-.buttonQuiz{
+.buttonQuiz {
     all: unset; /* Retire tous les styles de base */
     cursor: pointer; /* Indique que c'est un bouton cliquable */
     position:relative;
@@ -234,6 +234,7 @@ progress::-moz-progress-bar {
    width: 150px;
    text-align: center;
   gap: 20px;
+  transition: transform 5s ease, background-color 0.5s ease; 
 }
 
 
@@ -249,27 +250,66 @@ progress::-moz-progress-bar {
 }
 
 
-.buttonQuiz :hover {
-    transform: scale(1.1);
-    background-color: whitesmoke;
+#buttonpaint:after {
+    content: '🖼️';
+    position: absolute;
+    opacity: 0;  
+    top: 6px;
+    right: -21px;
+    transition: 0.6s;
+}
+#buttonpaint:hover{
+    padding-right: 24px;
+    padding-left:10px;
+}
+#buttonpaint:hover:after {
+  opacity: 1;
+  right: 15px;
 }
 
 
-.options :hover {
-    transform: scale(1.1);
-    background-color: whitesmoke;
-}
-
-.button-container :hover{
-    transform: scale(1.1); /* Scale up the button on hover */
-    background-color:#6c46e6; /* Lighter, semi-transparent background color */
-}
 
 
-.buttonQuiz :hover {
-    transform: scale(1.1);
-    background-color: whitesmoke;
+
+#buttoncinema:after {
+    content: '🎬';
+    position: absolute;
+    opacity: 0;  
+    top: 4px;
+    right: -21px;
+    transition: 0.6s;
 }
+#buttoncinema:hover{
+    padding-right: 24px;
+    padding-left:8px;
+}
+#buttoncinema:hover:after {
+  opacity: 1;
+  right: 16px;
+}
+
+
+
+
+#buttonarchitecture:after {
+    content: '🏛️';
+    position: absolute;
+    opacity: 0;  
+    top: 4px;
+    right: -21px;
+    transition: 0.6s;
+}
+#buttonarchitecture:hover{
+    padding-right: 24px;
+    padding-left:8px;
+}
+#buttonarchitecture:hover:after {
+  opacity: 1;
+  right: 10px;
+
+
+
+
 
 #scoreBackround{
     background-color:#5022E8;
@@ -332,6 +372,8 @@ a, a:visited, a:hover, a:active {
     cursor: pointer;       /* Curseur pour indiquer que c'est un lien */
 }
 
+
+
 #changePageToScore {
     padding: 7px 15px;
     font-family: "Roboto", sans-serif;
@@ -385,3 +427,4 @@ a, a:visited, a:hover, a:active {
     margin-right: 500px;
     margin-left: 120px;
 }
+

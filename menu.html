@@ -25,28 +25,28 @@
 	
  <div id=" optionMenu">
 
-<button class="buttonQuiz" data-quizname="quiz_whoPaintThat"> Peinture</button>
+<button class="buttonQuiz" id="buttonpaint" data-quizname="quiz_whoPaintThat"> Peinture</button>
 
 
 
 
-  <button class="buttonQuiz" data-quizname="quiz_cinema">Cinema</button>
+  <button class="buttonQuiz" id="buttoncinema" data-quizname="quiz_cinema">Cinema</button>
   
 
 
 
-  <button class="buttonQuiz" data-quizname="quiz_architecture">Architecture</button>
+  <button class="buttonQuiz" id="buttonarchitecture" data-quizname="quiz_architecture">Architecture</button>
  
 
 
 	</div>	
   <script>
-const buttons = document.querySelectorAll('.buttonQuiz');
-buttons.forEach(button => {
-  button.addEventListener ('click', ()=> {
+const buttons = document.querySelectorAll('.buttonQuiz');   // Declaration d'une constante buttons qui prend en compte les boutons du menu
+buttons.forEach(button => {                                 // Boucle pour chaque boutton
+  button.addEventListener ('click', ()=> {                    // On ecoute sur quel boutton l'utilisateur va clicker
    // console.log(button.dataset.quizname)
-    localStorage.setItem('quiz',`${button.dataset.quizname}`);
-    window.location.href='index.html'
+    localStorage.setItem('quiz',`${button.dataset.quizname}`);  // On renvoie a local storage le data qui etait assigner au boutton clicker
+    window.location.href='index.html'                            //
   })
 });
 

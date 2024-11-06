@@ -404,10 +404,12 @@ a, a:visited, a:hover, a:active {
 
 #changePageToScore:hover{
     transform: scale(1.1); /* Scale up the button on hover */
+    cursor: pointer;
 }
 
 #menuButton:hover{
     transform: scale(1.1); /* Scale up the button on hover */
+    cursor: pointer;
 }
 
 

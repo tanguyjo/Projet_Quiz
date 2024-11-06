@@ -17,6 +17,13 @@ const endText = document.getElementById ('endText');
 const scoreText = document.getElementById ('scoreText');
 
 const endMessage = document.getElementById ('endMessage');
+let chosenquiz = localStorage.getItem('quiz');
+
+const quizes = {
+  quiz_whoPaintThat : quiz_whoPaintThat,
+  quiz_cinema : quiz_cinema,
+  quiz_architecture : quiz_architecture
+}
 
 let chosenquiz = localStorage.getItem('quiz');
 

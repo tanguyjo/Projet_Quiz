@@ -16,9 +16,6 @@ html, body {
     cursor: pointer; /* Indique que c'est un bouton cliquable */
 }
 
-
-
-
 #header {
     margin: 0;
     padding: 0;
@@ -46,6 +43,9 @@ html, body {
 }
 
 #end-container {
+    justify-content:center;     /* Aligne les éléments horizontalement à droite */
+    align-items: center;         /* Aligne les éléments verticalement au centre */
+    gap: 20pt;                   /* Espace entre les éléments (facultatif) */
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     color: #5022E8;
@@ -62,7 +62,7 @@ html, body {
 
 #quiz-container {
     display: block;
-    margin-top: 100px;
+    margin-top: 40px;
     margin-left: 120px;
 
     column-count: 2;
@@ -144,7 +144,7 @@ h1{
     align-items: right;
     justify-content: right;
     height: fit-content;
-    margin-right: 90px;
+    margin-right: 100px;
 }
 
 .progressBarContainer {
@@ -242,14 +242,11 @@ progress::-moz-progress-bar {
 .options :hover {
     transform: scale(1.1);
     background-color: whitesmoke;
- 
 }
 
 .button-container :hover{
-
     transform: scale(1.1); /* Scale up the button on hover */
     background-color:#6c46e6; /* Lighter, semi-transparent background color */
-
 }
 
 
@@ -269,6 +266,7 @@ progress::-moz-progress-bar {
   opacity: 1;
   right: 15px;
 }
+
 
 
 
@@ -308,36 +306,37 @@ progress::-moz-progress-bar {
 #buttonarchitecture:hover:after {
   opacity: 1;
   right: 10px;
-}
+
+
 
 
 
 #scoreBackround{
     background-color:#5022E8;
-    height: 100%;
+    height:fit-content;
+
 }
+
 
 #titleMesScores{
     color: rgb(255, 255, 255);
     font-family: "Roboto", sans-serif;
-    text-align: center;
     font-size: x-large;
+    margin-left: 120px;
 }
 
 #tryNumber{
     color: rgb(255, 255, 255);
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 27px;
+    margin-left: 120px;
     font-size: large;
 }
 
 #myScores{
-    color:chocolate;
-}
-
-#changePage{
-    color: rgb(221, 255, 0);
+    position: relative;
     color:#5022E8;
     background-color:#FFFFFF;
     border-color:#5022E8;
@@ -346,12 +345,86 @@ progress::-moz-progress-bar {
     font-size: 21px ;
     font-weight:500;
     width:fit-content;
+    padding-left: 30px;
+    padding-right: 160px;
+}
+
+#changePage{
+    position: absolute;
+    top: 780px;
+    right:100px ;
+    left: 270px;
+    color:#5022E8;
+    background-color:#FFFFFF;
+    border-color:#5022E8;
+    border-radius:10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px ;
+    font-weight:500;
+    width:fit-content;
     padding: 6px 18px;
+    margin-left: 900px;
 }
 
 a, a:visited, a:hover, a:active {
     text-decoration: none; /* Retire le soulignement */
     color: inherit;        /* Couleur héritée ou modifiez par une couleur spécifique */
     cursor: pointer;       /* Curseur pour indiquer que c'est un lien */
+}
+
+
+
+#changePageToScore {
+    padding: 7px 15px;
+    font-family: "Roboto", sans-serif;
+    color:#5022E8;
+    background-color:#ffffff;
+    border-radius: 29px;
+    border-style:solid;
+    border-color: #5022E8;
+    font-size: 21px;
+    margin-left: 12px;
+    margin-top: 10px;
+    position: relative;
+}
+#menuButton {
+    padding: 7px 15px;
+    font-family: "Roboto", sans-serif;
+    color:#5022E8;
+    background-color:#ffffff;
+    border-radius: 29px;
+    border-style:solid;
+    border-color: #5022E8;
+    font-size: 21px;
+    margin-left: 12px;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+#changePageToScore:hover{
+    transform: scale(1.1); /* Scale up the button on hover */
+}
+
+#menuButton:hover{
+    transform: scale(1.1); /* Scale up the button on hover */
+}
+
+
+.topContainer {
+    display: flex;               /* Active Flexbox pour placer les éléments en ligne */
+    justify-content: flex-end;     /* Aligne les éléments horizontalement à droite */
+    align-items: center;         /* Aligne les éléments verticalement au centre */
+    gap: 30px;                   /* Espace entre les éléments (facultatif) */
+
+.scrollable-div {
+    height: 450px;   
+    width:fit-content;   
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #5022E8;
+    border-radius:10px;
+    margin-right: 500px;
+    margin-left: 120px;
 }
 
